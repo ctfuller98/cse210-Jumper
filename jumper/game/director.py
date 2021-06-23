@@ -7,6 +7,7 @@ class Director:
         self.target = Target()
         self.sabetour = Sabetour()
         self.game_over = False
+        self.word_list  = []
     def start_game(self):
         """Starts the game loop to control the sequence of play.
         Args:
@@ -30,4 +31,5 @@ class Director:
             self (Director): An instance of Director.
         """
         answer = self.target.get_word()
-        
+    def do_ouptuts(self):
+        display = self.sabetour.display_results
