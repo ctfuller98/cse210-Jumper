@@ -1,5 +1,4 @@
-
-class jumper:
+class Jumper:
     '''
     Represents the player input in the game. 
     Responsible for parsing input from the user, which letter they are guessing.
