@@ -5,7 +5,15 @@ class Target:
     '''
     def __init__(self):
         self.word_list =  ["happy", "behind", "jump", "town", "mend", "amazing", "terrify","afternoon", "poor", "shrill"]
-    def get_word(self, word_list):
-        game_word = random.choice(word_list)
-        print(f"The word is {game_word}")
-        return game_word
+        self.game_word = random.choice(self.word_list)
+        print(f"The word is {self.game_word}")
+        self.word_storage = ""
+        while len(self.word_storage) < len(self.game_word):
+            self.word_storage = self.word_storage + "_"
+        print (self.word_storage)
+    
+    def get_word(self):
+        return self.game_word
+
+    def get_storage(self):
+        return self.word_storage

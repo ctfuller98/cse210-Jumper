@@ -8,6 +8,7 @@ class Director:
         self.sabetour = Sabetour()
         self.game_over = False
         self.word_list  = []
+        self.guess = ""
     def start_game(self):
         """Starts the game loop to control the sequence of play.
         Args:
@@ -24,12 +25,14 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        guess = self.jumper.get_letter()
+        self.guess = self.jumper.get_letter()
     def do_updates(self):
         """Updates the important game information for each round of play
         Args:
             self (Director): An instance of Director.
         """
-        answer = self.target.get_word()
-    def do_ouptuts(self):
-        display = self.sabetour.display_results
+        self.sabetour.update_list(self.guess, self.target.get_word())
+        print (self.target.get_storage)
+
+    def do_outputs(self):
+        self.sabetour.display_results
