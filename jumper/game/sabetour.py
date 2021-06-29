@@ -46,6 +46,9 @@ class Sabetour:
     def get_hint(self):
         return self._hint
 
+    def get_incorrect_letters(self):
+        return self.incorrect_letters
+    
     def display_results(self):
         #For every incorrect guess, we print one less line of the chute array, to display how many guesses have been made.
         i = self.incorrect_letters
