@@ -32,7 +32,7 @@ class Director:
             self (Director): An instance of Director.
         """
         self.sabetour.update_list(self.guess, self.target.get_word())
-        print (self.target.get_storage)
+        print (self.target.get_storage())
 
     def do_outputs(self):
-        self.sabetour.display_results
+        self.sabetour.display_results()
