@@ -14,10 +14,17 @@ class Director:
         Args:
             self (Director): an instance of Director.
         """
+        
         while self.game_over == False:
             self.get_inputs()
             self.do_updates()
             self.do_outputs()
+            if self.sabetour.get_incorrect_letters == 5:
+                self.game_over == True
+                print("You lose General Kenobi!")
+            elif self.sabetour.get_hint == self.target.get_word:
+                self.game_over == True
+                print("Congratulations! You win this time!")
     def get_inputs(self):
         """Gets the inputs at the beginning of each round of play. In this case,
         that means moving the hunter to a new location.
