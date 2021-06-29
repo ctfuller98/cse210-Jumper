@@ -18,6 +18,7 @@ class Director:
             self.get_inputs()
             self.do_updates()
             self.do_outputs()
+
     def get_inputs(self):
         """Gets the inputs at the beginning of each round of play. In this case,
         that means moving the hunter to a new location.
