@@ -19,11 +19,12 @@ class Director:
             self.get_inputs()
             self.do_updates()
             self.do_outputs()
-            if self.sabetour.get_incorrect_letters == 5:
-                self.game_over == True
+            
+            if (self.sabetour.get_incorrect_letters() == 5):
+                self.game_over = True
                 print("You lose General Kenobi!")
-            elif self.sabetour.get_hint == self.target.get_word:
-                self.game_over == True
+            elif (self.sabetour.get_hint() == self.target.get_word()):
+                self.game_over = True
                 print("Congratulations! You win this time!")
 
     def get_inputs(self):
