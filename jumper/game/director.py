@@ -5,7 +5,7 @@ class Director:
     def __init__(self):
         self.jumper = Jumper()
         self.target = Target()
-        self.sabetour = Sabetour()
+        self.sabetour = Sabetour(len(self.target.get_word()))
         self.game_over = False
         self.word_list  = []
         self.guess = ""
@@ -32,7 +32,7 @@ class Director:
             self (Director): An instance of Director.
         """
         self.sabetour.update_list(self.guess, self.target.get_word())
-        print (self.target.get_storage())
+        print (self.sabetour.get_hint())
 
     def do_outputs(self):
         self.sabetour.display_results()
