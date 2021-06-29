@@ -19,34 +19,25 @@ class Sabetour:
         ]
 
     def update_list(self, guess, targetword):
-        self.letters_guessed.append(guess)
-        
-        #check for the guess inside the target word
-        on_track = False
-        i = 0
-
-        while i < len(targetword):
-            new_storage = ""
-            #If one piece of target word matches the guess, we are on_track, and we update the newly stored word to display
-            if guess == targetword[i]:
-                on_track = True
-                new_storage = new_storage + guess
-            #Whenever we don't find a new character, we put in an underscore.
+        hint = ""
+        for x in word:
+            if guesses.count(x)>0:
+                hint+=x
             else:
-                new_storage = new_storage + "_ "
-
-            i = i + 1
-            #If we are not on track, we have guessed incorrectly!
-        if on_track == False:
-            self.incorrect_letters = self.incorrect_letters + 1
-            #Update the target word
+                hint+="_"
+        self.letters_guessed.append(guess)
+        if target_word.count(guessed_letter)<=0:
+            if incorrect_letters> 
+            gussed_list.append
+        else:
+            for i in range(target_word.count):
         return new_storage
 
 
 
     def display_results(self):
         #For every incorrect guess, we print one less line of the chute array, to display how many guesses have been made.
-        i = 0 + len(self.incorrect_letters)
+        i = self.incorrect_letters
         while i < len(self.chute):
             print(self.chute[i])
             i = i + 1
